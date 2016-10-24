@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+	body{background: red;}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+<h1>抽到谁谁是猪</h1>
+
+<input type="button" value="开始" onclick="fn();" />
+<input type="button" value="结束" onclick="fn1()" />
+<input type="button" value="是谁？" />
+	<script type="text/javascript">
+
+
+	var timerId = "";
+	var divArr;
+	var map2 = new Map();
+	map2.set(1, '郭清鑫');
+	map2.set(2, '黄梦蛟');
+	map2.set(3, '王盛');
+	map2.set(4,'王军伟');
+	map2.set(5, '张海靖');
+	map2.set(6,'代立远');
+	map2.set(7,'郭迪祥');
+	map2.set(8,'朱利珍');
+
+
+	function fn(){
+
+		 divArr = document.getElementsByTagName("input")[2];
+		 timerId = setInterval(function(){
+			var num = parseInt(Math.random() * 8 + 1);
+			divArr.value = map2.get(num);
+			 console.log(divArr.value);	
+			 	
+	 }, 100);
+
+	
+
+ }
+ 
+
+function fn1(){
+	clearInterval(timerId);
+	alert(divArr.value);
+	
+}
+
+
+
+
+	</script>
+</body>
+</html>
